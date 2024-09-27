@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+    <title>Ecommerce Website</title>
+  </head>
+  <body>
+    <!--=============== HEADER ===============-->
+    <header class="header">
+      <nav class="nav container">
+        <a href="index.html" class="nav__logo">
+          <img class="nav__logo-img" src="{{ url_for('static', filename='img/logo.svg') }}" alt="website logo"/>
+        </a>
+        <div class="nav__menu" id="nav-menu">
+          <div class="nav__menu-top">
+            <a href="index.html" class="nav__menu-logo">
+              <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="">
+            </a>
+            <div class="nav__close" id="nav-close">
+              <i class="fi fi-rs-cross-small"></i>
+            </div>
+          </div>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link active-link">Documentation</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Blog</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Hire Me</a>
+            </li>
+          </ul>
+          <div class="header__search">
+            <form action="/scrape_product" method="POST" class="search__form">
+              <input name="Product URL" type="url" placeholder="Search For Items..." class="form__input" required />
+              <button type="submit" class="search__btn">
+                <img src="{{ url_for('static', filename='img/search.png') }}" alt="search icon" />
+              </button>
+            </form>
+          </div>          
+        </div>
+        <div class="header__user-actions">
+          <div class="header__action-btn nav__toggle" id="nav-toggle">
+            <img src="{{ url_for('static', filename='img/menu-burger.svg') }}" alt="">
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+
+      <!--=============== HOME ===============-->
+      <section class="home section--lg">
+        <div class="home__container container grid">
+          <div class="home__content">
+            <span class="home__subtitle">Hot Promotions</span>
+            <h1 class="home__title">
+              Fashion Trending <span>Great Collection</span>
+            </h1>
+            <p class="home__description">
+              Save more with coupons & up tp 20% off
+            </p>
+            <a href="#" class="btn">Shop Now</a>
+          </div>
+          <img src="{{ url_for('static', filename='img/home-img.png') }}" class="home__img" alt="hats" />
+        </div>
+      </section>
+
+      <!--=============== PRODUCTS ===============-->
+      <section class="products container section">
+        <div class="tab__items">
+          <div class="tab__item active-tab" content id="featured">
+            <div class="products__container grid">
+              {% for product in products %}
+              <div class="product__item">
+                <div class="product__banner">
+                  <a href="/product?product_name={{ product.product_name }}" class="product__images">
+                    <img src="{{ product.product_image }}" alt="{{ product.product_name }}" class="product__img default" />
+                    <img src="{{ product.product_image }}" alt="{{ product.product_name }}" class="product__img hover" />
+                  </a>
+                </div>
+                <div class="product__content">
+                  <!-- Pass product_name as a query parameter to the route -->
+                  <a href="/product?product_name={{ product.product_name }}">
+                    <h3 class="product__title">{{ product.product_name }}</h3>
+                  </a>
+                  <div class="product__price flex">
+                    <span class="new__price">₹{{ product.special_price }}</span>
+                    <span class="old__price">₹{{ product.original_price }}</span>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!--=============== FOOTER ===============-->
+    <footer class="footer container">
+      <div class="footer__container grid">
+        <div class="footer__content">
+          <a href="index.html" class="footer__logo">
+            <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="" class="footer__logo-img" />
+          </a>
+          <div class="footer__social">
+            <h4 class="footer__subtitle">Follow Me</h4>
+            <div class="footer__links flex">
+              <a href="#">
+                <img src="{{ url_for('static', filename='img/icon-facebook.svg') }}" alt="" class="footer__social-icon"/>
+              </a>
+              <a href="#">
+                <img src="{{ url_for('static', filename='img/icon-twitter.svg') }}" alt="" class="footer__social-icon"/>
+              </a>
+              <a href="#">
+                <img src="{{ url_for('static', filename='img/icon-instagram.svg') }}" alt="" class="footer__social-icon"/>
+              </a>
+              <a href="#">
+                <img src="{{ url_for('static', filename='img/icon-pinterest.svg') }}" alt="" class="footer__social-icon"/>
+              </a>
+              <a href="#">
+                <img src="{{ url_for('static', filename='img/icon-youtube.svg') }}" alt="" class="footer__social-icon"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="copyright">&copy; 2024 Evara. All right reserved</p>
+        <span class="designer">Designed by Ankit Sharma</span>
+      </div>
+    </footer>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
