@@ -7,26 +7,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtualenv
-venv/
-env/
-ENV/
-.venv/
-.env
 
-# Distribution / packaging
-build/
-dist/
-*.egg-info/
-.eggs/
-*.egg
-
-# pipenv
-Pipfile.lock
-
-# Environment variables
-.env
-*.env
 
 # Docker
 docker-compose.yml
