@@ -1,9 +1,9 @@
-# **Product Scraper and Sentiment Analysis Web App** 📈💬
+# **Evara** 📈💬
 
 A powerful web application designed to scrape product reviews from various e-commerce platforms and perform sentiment analysis to gauge customer opinions using natural language processing (NLP) techniques.
 
 ### **Live Link** 🔗
-[Access the live app here](https://product-scraper-sentiment-analysis.onrender.com)
+[Access the live app here](https://evara.onrender.com)
 
 ---
 
@@ -24,7 +24,7 @@ A powerful web application designed to scrape product reviews from various e-com
 
 ## **Project Overview**
 
-**Product Scraper and Sentiment Analysis Web App** is an innovative application that enables users to scrape product reviews from multiple e-commerce sites and analyze the sentiments of these reviews. By leveraging advanced NLP algorithms, the app provides insights into customer satisfaction and product performance. This tool is beneficial for businesses aiming to improve their products and services based on real customer feedback.
+**Evara** is an innovative application that enables users to scrape product reviews from multiple e-commerce sites and analyze the sentiments of these reviews. By leveraging advanced NLP algorithms, the app provides insights into customer satisfaction and product performance. This tool is beneficial for businesses aiming to improve their products and services based on real customer feedback.
 
 ---
 
@@ -116,8 +116,8 @@ The application may use third-party APIs for additional data or functionalities,
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/product-scraper-sentiment-analysis.git
-   cd product-scraper-sentiment-analysis
+   git clone https://github.com/yourusername/evara.git
+   cd evara
    ```
 
 2. Create a virtual environment and activate it:
@@ -161,4 +161,4 @@ The application may use third-party APIs for additional data or functionalities,
 3. **User Accounts**: Implement user authentication and personalized settings for saving favorite products and analyses.
 4. **Real-time Monitoring**: Adding features for real-time monitoring of product sentiment changes over time.
 
----
+--- 
