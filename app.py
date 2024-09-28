@@ -2,6 +2,7 @@
 from flask import Flask, request, render_template
 import pandas as pd
 import mysql.connector
+from mysql.connector import Error
 import os
 from dotenv import load_dotenv
 
@@ -12,14 +13,20 @@ load_dotenv()
 app = Flask(__name__)
 
 def get_db_connection():
-    connection = mysql.connector.connect(
-        host=os.getenv('MYSQL_HOST'),
-        port=int(os.getenv('DB_PORT', 3306)),
-        user=os.getenv('MYSQL_USER'),
-        password=os.getenv('MYSQL_PASSWORD'),
-        database=os.getenv('MYSQL_DATABASE')
-    )
-    return connection
+    try:
+        connection = mysql.connector.connect(
+            host=os.getenv('MYSQL_HOST'),
+            port=int(os.getenv('DB_PORT', 3306)),
+            user=os.getenv('MYSQL_USER'),
+            password=os.getenv('MYSQL_PASSWORD'),
+            database=os.getenv('MYSQL_DATABASE')
+        )
+        if connection.is_connected():
+            print("Successfully connected to the database")
+        return connection
+    except Error as e:
+        print(f"Error connecting to MySQL: {e}")
+        return None
 
 # Create a route for the index page
 @app.route('/', methods=['GET'])
