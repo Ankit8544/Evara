@@ -22,11 +22,16 @@ def get_db_connection():
             database=os.getenv('MYSQL_DATABASE')
         )
         if connection.is_connected():
-            print("Successfully connected to the database")
-        return connection
+            print("Successfully connected to the MySQL database")
+            return connection
+        else:
+            print("Connection failed but no exception was thrown.")
     except Error as e:
         print(f"Error connecting to MySQL: {e}")
-        return None
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+    return None
+
 
 # Create a route for the index page
 @app.route('/', methods=['GET'])
