@@ -1,4 +1,4 @@
-# **Evara** 📈💬
+# **EvaraFashion** 📈💬
 
 A powerful web application designed to scrape product reviews from various e-commerce platforms and perform sentiment analysis to gauge customer opinions using natural language processing (NLP) techniques.
 
