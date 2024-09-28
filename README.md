@@ -1,4 +1,4 @@
-# **Evara** 📈💬
+# **EvaraFashion** 📈💬
 
 A powerful web application designed to scrape product reviews from various e-commerce platforms and perform sentiment analysis to gauge customer opinions using natural language processing (NLP) techniques.
 
@@ -24,7 +24,7 @@ A powerful web application designed to scrape product reviews from various e-com
 
 ## **Project Overview**
 
-**Evara** is an innovative application that enables users to scrape product reviews from multiple e-commerce sites and analyze the sentiments of these reviews. By leveraging advanced NLP algorithms, the app provides insights into customer satisfaction and product performance. This tool is beneficial for businesses aiming to improve their products and services based on real customer feedback.
+**EvaraFashion** is an innovative application that enables users to scrape product reviews from multiple e-commerce sites and analyze the sentiments of these reviews. By leveraging advanced NLP algorithms, the app provides insights into customer satisfaction and product performance. This tool is beneficial for businesses aiming to improve their products and services based on real customer feedback.
 
 ---
 
